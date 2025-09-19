@@ -1,179 +1,144 @@
-/* Estilos globales */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Quicksand:wght@400;600&display=swap');
+
+:root {
+    --primary: #d14d72;        /* Rosa pastel vivo */
+    --secondary: #f7f1f8;      /* Fondo rosa muy clarito */
+    --accent: #a86f9e;         /* Morado suave */
+    --text-dark: #4a4a4a;      /* Texto oscuro suave */
+    --text-light: #ffffff;     /* Blanco para contrastes */
+    --card-bg: #ffffff;        /* Fondo tarjetas */
+    --shadow: rgba(161, 111, 158, 0.25);
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Tipografía moderna y elegante */
-  background-color: #fdfdfd; /* Fondo limpio y suave */
-  color: #333;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
+    margin: 0;
+    background-color: var(--secondary);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
 header {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('https://via.placeholder.com/1500x900/FFFFFF/000000?text=Music'); /* Imagen de fondo musical */
-  background-size: cover;
-  background-position: center;
-  filter: brightness(80%); /* Fondo ligeramente oscuro para resaltar el texto */
-  text-align: center;
-  padding: 0 20px;
+    text-align: center;
+    margin: 40px 0 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    color: var(--primary);
+    letter-spacing: 0.15em;
+    user-select: none;
+    text-shadow: 0 0 8px var(--accent);
 }
 
-header h1 {
-  font-size: 4.5rem;
-  font-family: 'Playfair Display', serif; /* Fuente elegante y sofisticada para el título */
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-weight: bold;
-  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7); /* Sombra para hacer el texto más legible */
-  animation: fadeIn 2s ease-in-out;
+img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 80px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px var(--primary);
+    transition: transform 0.3s ease;
+}
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--accent);
 }
 
-header h1 span {
-  color: #ff7f50; /* Color vibrante para acentuar */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 12px;
 }
 
-header h2 {
-  font-size: 2.5rem;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  font-weight: 300;
-  margin-top: 20px;
-  letter-spacing: 2px;
-  animation: fadeIn 3s ease-in-out;
+h3 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
-header .music-bar {
-  width: 60%;
-  height: 8px;
-  margin-top: 30px;
-  background: linear-gradient(to right, #ff7f50, #ffdd00);
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  animation: pulse 2s infinite alternate;
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
 }
 
-@keyframes pulse {
-  0% {
-    width: 60%;
-  }
-  50% {
-    width: 70%;
-  }
-  100% {
-    width: 60%;
-  }
+ul li {
+    background: var(--card-bg);
+    border-radius: 30px;
+    padding: 14px 28px;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+ul li:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+    box-shadow: 0 12px 32px var(--accent);
 }
 
-/* Estilo de pie de página */
-footer {
-  position: absolute;
-  bottom: 20px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #333;
-  font-weight: 300;
+ul li a {
+    text-decoration: none;
+    color: inherit;
 }
 
-footer a {
-  color: #ff7f50;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
+section {
+    max-width: 900px;
+    background: var(--card-bg);
+    margin: 40px auto;
+    padding: 40px 45px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
 }
 
-footer a:hover {
-  color: #ffdd00;
+section h1 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
 }
 
-footer .social-icons {
-  margin-top: 10px;
+section p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
 }
 
-footer .social-icons a {
-  color: #333;
-  font-size: 1.5rem;
-  margin: 0 15px;
-  transition: color 0.3s ease;
+section img {
+    width: 100%;
+    max-width: 620px;
+    border-radius: 15px;
+    margin: 30px auto;
+    display: block;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s ease;
 }
 
-footer .social-icons a:hover {
-  color: #ff7f50;
+section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px var(--accent);
 }
 
-/* Diseño de la estructura */
-.container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-button {
-  background-color: #ff7f50;
-  border: none;
-  color: white;
-  padding: 12px 40px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 5px 20px rgba(255, 127, 80, 0.3);
-  margin-top: 40px;
-}
-
-button:hover {
-  background-color: #ff6f3f;
-}
-
-/* Ajustes para móviles */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 3.5rem;
-  }
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  header h2 {
-    font-size: 2rem;
-  }
+    ul li {
+        width: 80%;
+        text-align: center;
+    }
 
-  header .music-bar {
-    width: 80%;
-  }
-
-  footer .social-icons a {
-    font-size: 1.2rem;
-  }
-
-  button {
-    font-size: 1rem;
-  }
+    section {
+        padding: 30px 20px;
+    }
 }
-
